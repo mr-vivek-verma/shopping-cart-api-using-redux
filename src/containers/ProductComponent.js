@@ -5,7 +5,7 @@ import { useSelector } from "react-redux/es/exports";
 export const ProductComponent = () => {
   const products = useSelector((state) => state.allProducts.products);
   const renderList = products.map((product) => {
-    const { id, image, title, price, category, description } = product;
+    const { id, image, title, price, category } = product;
     return (
       <div className="four column wide" key={id}>
         <Link to={`/product/${id}`}>
@@ -18,7 +18,6 @@ export const ProductComponent = () => {
                 <div className="header">{title}</div>
                 <div className="meta price">${price}</div>
                 <div className="meta">{category}</div>
-                <div className="meta">{description}</div>
               </div>
             </div>
           </div>
